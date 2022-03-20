@@ -21,17 +21,6 @@ exclude = '''
 )
 '''
 
-[tool.isort]
-profile="black"
-
-[tool.pytest]
-addopts = "-ra -v --durations=5 --cov=src"
-
-[tool.coverage.run]
-branch = true
-source = ["src", "tests"]
-omit = ["tests/fixtures/*"]
-
 [tool.coverage.report]
 exclude_lines = [
   "pragma: no cover",
@@ -43,3 +32,14 @@ exclude_lines = [
   "if TYPE_CHECKING:",
   "if typing.TYPE_CHECKING:"
 ]
+
+[tool.coverage.run]
+branch = true
+source = ["src", "tests"]
+omit = ["tests/fixtures/*"]
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest]
+addopts = "-ra -v --durations=5 --cov=src"
