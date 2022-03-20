@@ -20,3 +20,26 @@ exclude = '''
                      # the root of the project
 )
 '''
+
+[tool.isort]
+profile="black"
+
+[tool.pytest]
+addopts = "-ra -v --durations=5 --cov=src"
+
+[tool.coverage.run]
+branch = true
+source = ["src", "tests"]
+omit = ["tests/fixtures/*"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "def __repr__",
+  "def __str__",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+  "if typing.TYPE_CHECKING:"
+]
