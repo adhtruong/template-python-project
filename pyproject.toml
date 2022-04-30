@@ -1,7 +1,4 @@
 [tool.black]
-line-length = 120
-target-version = ['py37']
-include = '\.pyi?$'
 exclude = '''
 (
   /(
@@ -20,6 +17,9 @@ exclude = '''
                      # the root of the project
 )
 '''
+include = '\.pyi?$'
+line-length = 120
+target-version = ['py39']
 
 [tool.coverage.report]
 exclude_lines = [
@@ -30,16 +30,16 @@ exclude_lines = [
   "raise NotImplementedError",
   "if __name__ == .__main__.:",
   "if TYPE_CHECKING:",
-  "if typing.TYPE_CHECKING:"
+  "if typing.TYPE_CHECKING:",
 ]
 
 [tool.coverage.run]
 branch = true
-source = ["src", "tests"]
 omit = ["tests/fixtures/*"]
+source = ["src", "tests"]
 
 [tool.isort]
 profile = "black"
 
-[tool.pytest]
+[tool.pytest.ini_options]
 addopts = "-ra -v --durations=5 --cov=src"
