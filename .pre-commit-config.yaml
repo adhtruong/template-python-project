@@ -9,6 +9,10 @@ repos:
   - id: requirements-txt-fixer
   - id: detect-private-key
   - id: sort-simple-yaml
+- repo: https://github.com/asottile/pyupgrade
+  rev: v3.3.1
+  hooks:
+  - id: pyupgrade
 - repo: local
   hooks:
   - id: autoflake

@@ -24,6 +24,10 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         pip install -r requirements-dev.txt
+    - uses: actions/cache@v2
+      with:
+        path: ~/.cache/pre-commit
+        key: pre-commit|${{ env.PY }}|${{ hashFiles('.pre-commit-config.yaml') }}|{{ hashFiles('requirements-dev.txt') }}
     - name: Run pre-commits
       run: |
         pre-commit run -a
