@@ -16,7 +16,16 @@ Template python project that sets up standard developer requirements, precommits
 
 ## Development Set Up
 
+```bash
+python -m venv .venv
+source .venv/Scripts/activate
+pip install -r requirements-dev.txt
+pre-commit install
 ```
-    pip install -r requirements-dev.txt
-    pre-commit install
+
+## Update requirements
+
+```bash
+pip-compile
+pip-compile --extra dev -o requirements-dev.txt pyproject.toml --upgrade
 ```

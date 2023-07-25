@@ -1,7 +1,31 @@
+[project]
+authors = []
+dependencies = []
+name = "template-python-project"
+version = "0.0.1"
+
+[tool.setuptools]
+py-modules = []
+
+[build-system]
+# Minimum requirements for the build system to execute.
+requires = ["setuptools", "wheel"]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "flake8",
+  "isort",
+  "mypy",
+  "pip-tools",
+  "pre-commit",
+  "pytest",
+  "pytest-cov",
+]
+
 [tool.black]
 include = '\.pyi?$'
 line-length = 120
-target-version = ['py39']
 
 [tool.coverage.report]
 exclude_lines = [
