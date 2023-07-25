@@ -13,6 +13,7 @@ requires = ["setuptools", "wheel"]
 
 [project.optional-dependencies]
 dev = [
+  "autoflake",
   "black",
   "flake8",
   "isort",

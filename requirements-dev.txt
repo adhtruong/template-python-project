@@ -4,6 +4,8 @@
 #
 #    pip-compile --extra=dev --output-file=requirements-dev.txt pyproject.toml
 #
+autoflake==2.2.0
+    # via template-python-project (pyproject.toml)
 black==23.7.0
     # via template-python-project (pyproject.toml)
 build==0.10.0
@@ -65,7 +67,9 @@ pre-commit==3.3.3
 pycodestyle==2.10.0
     # via flake8
 pyflakes==3.0.1
-    # via flake8
+    # via
+    #   autoflake
+    #   flake8
 pyproject-hooks==1.0.0
     # via build
 pytest==7.4.0
@@ -78,6 +82,7 @@ pyyaml==6.0.1
     # via pre-commit
 tomli==2.0.1
     # via
+    #   autoflake
     #   black
     #   build
     #   coverage
