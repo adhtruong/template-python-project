@@ -64,7 +64,7 @@ pluggy==1.2.0
     # via pytest
 pre-commit==3.3.3
     # via template-python-project (pyproject.toml)
-pycodestyle==2.10.0
+pycodestyle==2.11.0
     # via flake8
 pyflakes==3.0.1
     # via
